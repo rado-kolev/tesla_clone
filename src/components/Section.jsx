@@ -1,21 +1,30 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import { Fade } from 'react-reveal';
 
-const Section = ({ title, description, image }) => {
+const Section = ({ title, description, image, leftBtnText, rightBtnText }) => {
   return (
     <Wrap style={{ backgroundImage: `url(${image})` }}>
-      <ItemText>
-        <h1>{title}</h1>
-        <p>{description}</p>
-      </ItemText>
-      <Buttons>
-        <ButtonGroup>
-          <LeftButton>Custom Order</LeftButton>
+      <Fade top>
+        <ItemText>
+          <h1>{title}</h1>
+          <p>{description}</p>
+        </ItemText>
+      </Fade>
+      <Fade bottom>
+        <Buttons>
+          <ButtonGroup>
+            <Fade left>
+              <LeftButton>{leftBtnText}</LeftButton>
+            </Fade>
 
-          <RightButton>Existing Inventory</RightButton>
-        </ButtonGroup>
-        <DownArrow src='/assets/images/down-arrow.svg' />
-      </Buttons>
+            <Fade right>
+              {rightBtnText && <RightButton>{rightBtnText}</RightButton>}
+            </Fade>
+          </ButtonGroup>
+          <DownArrow src='/assets/images/down-arrow.svg' />
+        </Buttons>
+      </Fade>
     </Wrap>
   );
 };
@@ -30,7 +39,6 @@ const Wrap = styled.div`
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
-
 `;
 
 const ItemText = styled.div`
@@ -54,7 +62,7 @@ const ButtonGroup = styled.div`
 `;
 
 const LeftButton = styled.div`
-  background-color: rgba(23,26,32,0.8);
+  background-color: rgba(23, 26, 32, 0.8);
   color: white;
   width: 256px;
   height: 40px;
@@ -83,6 +91,8 @@ Section.propTypes = {
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
+  leftBtnText: PropTypes.string,
+  rightBtnText: PropTypes.string,
 };
 
-export default Section
+export default Section;

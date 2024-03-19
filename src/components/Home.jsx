@@ -11,6 +11,8 @@ const Home = () => {
           title={item.title}
           description={item.description}
           image={`/assets/images/${item.image}`}
+          leftBtnText={item.leftBtnText}
+          rightBtnText={item.rightBtnText}
         />
       ))}
     </Container>
