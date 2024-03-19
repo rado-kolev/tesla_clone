@@ -46,5 +46,29 @@
     "peakPower": "1,130",
     "leftBtnText": "Custom Order",
     "rightBtnText": "Existing Inventory"
+  },
+  {
+    "id": 4,
+    "title": "Solar Panels",
+    "description": "Money-back Guarantee",
+    "image": "solar-panel.jpg",
+    "leftBtnText": "Order Now",
+    "rightBtnText": "Learn More"
+  },
+  {
+    "id": 5,
+    "title": "Solar Roofs",
+    "description": "Solar Roofs Cost Less Than a New Roof Plus Solar Panels",
+    "image": "solar-roof.jpg",
+    "leftBtnText": "Order Now",
+    "rightBtnText": "Learn More"
+  },
+  {
+    "id": 6,
+    "title": "Accessories",
+    "description": "",
+    "image": "accessories.jpg",
+    "leftBtnText": "Shop Now",
+    "rightBtnText": ""
   }
 ]

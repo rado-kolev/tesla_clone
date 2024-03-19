@@ -2,9 +2,16 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import { Fade } from 'react-reveal';
 
-const Section = ({ title, description, image, leftBtnText, rightBtnText }) => {
+const Section = ({ id, title, description, image, leftBtnText, rightBtnText, isLastSection }) => {
+  const scrollToNextSection = () => {
+    const nextSection = document.getElementById(`${id + 1}`);
+    if (nextSection) {
+      nextSection.scrollIntoView();
+    }
+  };
+
   return (
-    <Wrap style={{ backgroundImage: `url(${image})` }}>
+    <Wrap id={`${id}`} style={{ backgroundImage: `url(${image})` }}>
       <Fade top>
         <ItemText>
           <h1>{title}</h1>
@@ -22,7 +29,12 @@ const Section = ({ title, description, image, leftBtnText, rightBtnText }) => {
               {rightBtnText && <RightButton>{rightBtnText}</RightButton>}
             </Fade>
           </ButtonGroup>
-          <DownArrow src='/assets/images/down-arrow.svg' />
+          {!isLastSection && (
+            <DownArrow
+              src='/assets/images/down-arrow.svg'
+              onClick={() => scrollToNextSection(parseInt(id) + 1)}
+            />
+          )}
         </Buttons>
       </Fade>
     </Wrap>
@@ -30,7 +42,7 @@ const Section = ({ title, description, image, leftBtnText, rightBtnText }) => {
 };
 
 const Wrap = styled.div`
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -64,7 +76,7 @@ const ButtonGroup = styled.div`
 const LeftButton = styled.div`
   background-color: rgba(23, 26, 32, 0.8);
   color: white;
-  width: 256px;
+  width: 240px;
   height: 40px;
   display: flex;
   justify-content: center;
@@ -85,14 +97,17 @@ const RightButton = styled(LeftButton)`
 const DownArrow = styled.img`
   height: 40px;
   animation: animateDown infinite 1.5s;
+  cursor: pointer;
 `;
 
 Section.propTypes = {
+  id: PropTypes.number.isRequired,
   title: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
   leftBtnText: PropTypes.string,
   rightBtnText: PropTypes.string,
+  isLastSection: PropTypes.bool.isRequired,
 };
 
 export default Section;
