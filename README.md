@@ -1,8 +1,23 @@
-# React + Vite
+# Tesla
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## [Live Site](https://te5la-clone.web.app)
 
-Currently, two official plugins are available:
+<br/>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Description
+
+A Tesla clone.
+
+<br/>
+
+## Screenshot
+
+![Website screenshots](./demo/screenshot-tesla.png)
+
+<br/>
+
+## 🛠️ Built with:
+
+![Vite Badge](https://img.shields.io/badge/Vite-646CFF?logo=vite&logoColor=fff&style=for-the-badge)
+![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![styled-components Badge](https://img.shields.io/badge/styled--components-DB7093?logo=styledcomponents&logoColor=fff&style=for-the-badge)
