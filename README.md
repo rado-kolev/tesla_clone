@@ -6,7 +6,7 @@
 
 ## 📜 Description
 
-A Tesla clone.
+A Tesla clone, developed using React.js, Styled-components and React-reveal.
 
 <br/>
 
