@@ -39,7 +39,7 @@ Make sure you have the following installed on your machine:
 
 ```
 git clone https://github.com/rado-kolev/tesla_clone.git
-cd brainwave
+cd tesla_clone
 ```
 
 #### _Installation_
